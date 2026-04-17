@@ -1,6 +1,12 @@
 .DS_Store
 __pycache__/
 *.pyc
+*.pyo
+*.zip
+*.rtf
 
 archive (4)/
 *.sqlite
+package/
+processed_reviews.csv
+processed_reviews_v2.csv
