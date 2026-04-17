@@ -1,0 +1,17 @@
+version: '3'
+services:
+  localstack:
+    image: localstack/localstack
+    environment:
+      - DOCKER_HOST=unix:///var/run/docker.sock
+    ports:
+      - "4566:4566"        # LocalStack gateway
+      - "4510-4559:4510-4559"  # Internal port range
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"   # Docker socket to allow LocalStack to use Docker
+    networks:
+      - localstack_network
+
+networks:
+  localstack_network:
+    driver: bridge
